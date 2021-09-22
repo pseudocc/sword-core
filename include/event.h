@@ -4,6 +4,7 @@
 #include "dtype.h"
 
 typedef struct event_s event_t;
+typedef struct iacts_s iacts_t;
 typedef struct req_s req_t;
 typedef struct rwd_s rwd_t;
 

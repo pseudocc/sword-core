@@ -1,13 +1,7 @@
 #include <stdlib.h>
 #include "world.h"
 
-typedef struct chr_node_s chr_node_t;
 typedef struct place_map_s place_map_t;
-
-struct chr_node_s {
-  chr_t* chr;
-  chr_node_t* next;
-};
 
 struct world_s {
   chr_node_t* chrl;
@@ -15,18 +9,6 @@ struct world_s {
 
   uint_t seed;
 };
-
-static chr_node_t* chr_node(chr_t* cp) {
-  chr_node_t* p = malloc(sizeof(chr_node_t));
-  p->chr = cp;
-}
-
-static void _chr_node(chr_node_t* p) {
-  if (p == NULL)
-    return;
-  free(p->chr);
-  free(p);
-}
 
 world_t* world() {
   world_t* p = malloc(sizeof(world_t));
